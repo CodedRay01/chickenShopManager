@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicken Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Chicken Store</h1>
+
+        <!-- Price Section -->
+        <section id="price-section">
+            <h2>Set Price per Kg</h2>
+            <input type="number" id="price-per-kg" placeholder="Price per Kg">
+            <button id="save-price-btn">Save Price</button>
+        </section>
+
+        <!-- Add Item Section -->
+        <section id="add-item-section">
+            <h2>Add Sale</h2>
+            <form id="add-item-form">
+                <input type="text" id="customer-name" placeholder="Customer Name" required>
+                <input type="number" id="chicken-weight" placeholder="Weight (Kg)" required>
+                <input type="text" id="amount" placeholder="Amount" disabled>
+                <div>
+                    <label><input type="radio" name="payment-status" value="Paid" checked> Paid</label>
+                    <label><input type="radio" name="payment-status" value="Unpaid"> Unpaid</label>
+                </div>
+                <button type="submit">Add Item</button>
+            </form>
+        </section>
+
+        <!-- Sales Section -->
+        <section id="sales-section">
+            <h2>Sales</h2>
+            <div class="filters">
+                <button data-filter="all">All Sales</button>
+                <button data-filter="paid">Paid</button>
+                <button data-filter="unpaid">Unpaid</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Customer Name</th>
+                        <th>Weight (Kg)</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="sales-table-body"></tbody>
+            </table>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
